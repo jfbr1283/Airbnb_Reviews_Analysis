@@ -159,7 +159,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-data/la_listings.csv.gzdata/la_listings.csvdata/reviews.csv.gzdata/la_reviews.csv
+data/la_listings.csv.gz
+data/la_listings.csv
+data/reviews.csv.gz
+data/la_reviews.csv
 data/calendar.csv
 data/processed_reviews2.csv
 data/processed_reviews.csv
