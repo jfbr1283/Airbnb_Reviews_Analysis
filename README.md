@@ -2,13 +2,21 @@
 
 **Analyst**: JF Roberts
 
+<p align="center">
+  <img width="900" height="400" src="images/strand-modern-south.jpg">
+</p>
+
 ## Overview
 I have been contracted by a boutique real estate firm out of Manhattan Beach California to help them optimize the Airbnb branch of their business. With hundreds of properties across Los Angeles, this firm wants to ensure that they are maximizing return on each of their properties by setting an optimal per night price point. With detailed information numerous written reviews for each of their properties, they wish to uncover whether these written reviews along with other features can be used to set optimal price points.
 
 ## Business Understanding
-To perform this analysis, I have chosen to use Natural Language Processing (NLP) to build a classification model to explore whether Airbnb written reviews are reliable predictors for the ‘price per night’ of a given Airbnb listing. Specifically, for one bedroom listings as they occupy the majority of Airbnb listings in the greater Los Angeles. Based on the results, this analysis will aim to communicate clear recommendations on how to utilize this model to optimize Airbnb price listing strategy.
+To perform this analysis, we created a classification model to explore whether Airbnb written reviews are reliable predictors for the ‘price per night’ of a given Airbnb listing. Specifically for one-bedroom listings, they occupy most of the Airbnb listings in greater Los Angeles. Based on the results, this analysis will communicate clear recommendations on how Manhattan Beach Group should utilize this model to optimize their listing price-setting strategy.
 
 ## The Data
+<p align="center">
+  <img width="550" height="200" src="images/airbnb_logo.png">
+</p>
+
 For this price analysis we pulled two data sets from [Inside Airbnb](http://insideairbnb.com/get-the-data/). "Inside Airbnb" is a website that sources Airbnb data quarterly for cities around the world. It includes data on _listings_, _reviews_, _neighborhoods_ and _calendar information_. The first data set includes detailed information such as **price, number of bedrooms, neighborhoods, property type and ratings** from over 44,000 Airbnb listings in greater Los Angeles. The second data set includes over 1.5 million **written reviews** corresponding to the listings in the first data set.  In the "Data Preparation" section below we will merge these two data sets and filter them down to the features of interest.
 
 **How To Get The Data:** Apart from the cleaned and processed data (_processed_data.csv_), the data sets were too large to push to GitHub. Find the relevant download links below:
@@ -18,6 +26,10 @@ For this price analysis we pulled two data sets from [Inside Airbnb](http://insi
 ## Data Preparation
 
 **Listings Data Set:** To make our analysis as granular as possible, we decided to focus on listings with a specific number of bedrooms. As you can see from the graph below, 1-bedroom listings made up the majority of the data. As a result, we dropped all listings with more than 1 bedroom. To make our **target variable, price**, easier to work with we converted the price to feature to a price range based on the inter quartile range of price in this data set. As a result, our target variable was broken down into 4 classes of prcie points.
+
+<p align="left">
+  <img width="550" height="400" src="images/bedrooms.png">
+</p>
 
 **Reviews Data:** Our first task with the written reviews was to group reviews by their respective listings reducing the data from 1.5 million reviews to 33,000. After cleaning our features of interest and joining the data sets we pre-process our text data to prepare it for modeling.
 
@@ -68,12 +80,25 @@ Models Used:
 - **Train Accuracy Score: 83%**
 - **Validation Test Accuracy Score: 54%**
 
+<p align="left">
+  <img width="400" height="300" src="images/log_confusion.png">
+</p>
+
 2. Random Forest Classifier #3 - Tuned
 - **Train Accuracy Score: 100%**
 - **Validation Test Accuracy Score: 52%**
 
+<p align="left">
+  <img width="400" height="300" src="images/rf_confusion.png">
+</p>
+  
+
 ## Feature Importances
-Let's extract the top 10 feature importances from our best-performing Random Forest Classifier. Specifically, we are looking at the feature importance of our reviews - text data - therefore our features will be specific words. In our top 10, we find words like _nice_, _beautiful_, _great_, and _clean_ which all have positive connotations. This indicates that our model relies more heavily on these positive words when making predictions about price.
+Let's extract the top 10 feature importances from our best-performing Random Forest Classifier. Specifically, we are looking at the feature importance of our reviews - text data - therefore our features will be specific words. In our top 10, we find words like _nice_, _beautiful_, _great_, and _clean_ which all have positive connotations. This indicates that our model relies more heavily on these 'positive' words when making predictions about price.
+
+<p align="left">
+  <img width="700" height="400" src="images/feature_imp.png">
+</p>
 
 ## Evaluation
 - Typically, in a classification problem, a regression estimator such as Logistic Regression is less suited as it assumes a linear relationship. Its classifier counterparts such as Decision Trees and Random Forests on the other hand, are well suited for classification as they focus on feature selection - weighing important features more heavily. It is interesting then that our Logistic Regression had the highest accuracy score.
