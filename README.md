@@ -1,1 +1,3 @@
-# Airbnb_Reviews_Analysis
+# Airbnb Price Analysis
+
+**Analyst**: JF Roberts
