@@ -7,17 +7,17 @@
 </p>
 
 ## Overview
-I have been contracted by a boutique real estate firm out of Manhattan Beach California to help them optimize the Airbnb branch of their business. With hundreds of properties across Los Angeles, this firm wants to ensure that they are maximizing return on each of their properties by setting an optimal per night price point. With detailed information numerous written reviews for each of their properties, they wish to uncover whether these written reviews along with other features can be used to set optimal price points.
+A boutique real estate firm has contracted us out of Manhattan Beach California to help them optimize the Airbnb branch of their business. With hundreds of properties across Los Angeles, this firm wants to ensure that they are maximizing return on each of their properties by setting an optimal per-night price point. With detailed information and numerous written reviews for each of their properties, they wish to uncover whether these written reviews along with other features can be used to set optimal price points.
 
 ## Business Understanding
-To perform this analysis, we created a classification model to explore whether Airbnb written reviews are reliable predictors for the ‘price per night’ of a given Airbnb listing. Specifically for one-bedroom listings, they occupy most of the Airbnb listings in greater Los Angeles. Based on the results, this analysis will communicate clear recommendations on how Manhattan Beach Group should utilize this model to optimize their listing price-setting strategy.
+To perform this analysis, we created a classification model to explore whether Airbnb written reviews are reliable predictors for the ‘price per night’ of a given Airbnb listing. Specifically for one-bedroom listings, they occupy most of the Airbnb listings in greater Los Angeles. Based on the results, this analysis will clearly recommend how The Manhattan Beach Group should utilize this model to optimize its listing price-setting strategy.
 
 ## The Data
 <p align="center">
   <img width="550" height="200" src="images/airbnb_logo.png">
 </p>
 
-For this price analysis we pulled two data sets from [Inside Airbnb](http://insideairbnb.com/get-the-data/). "Inside Airbnb" is a website that sources Airbnb data quarterly for cities around the world. It includes data on _listings_, _reviews_, _neighborhoods_ and _calendar information_. The first data set includes detailed information such as **price, number of bedrooms, neighborhoods, property type and ratings** from over 44,000 Airbnb listings in greater Los Angeles. The second data set includes over 1.5 million **written reviews** corresponding to the listings in the first data set.  In the "Data Preparation" section below we will merge these two data sets and filter them down to the features of interest.
+For this price analysis, we pulled two data sets from [Inside Airbnb](http://insideairbnb.com/get-the-data/). "Inside Airbnb" is a website that sources Airbnb data quarterly for cities worldwide. It includes data on _listings_, _reviews_, _neighborhoods_ and _calendar information_. The first data set includes detailed information such as **price, number of bedrooms, neighborhoods, property type, and ratings** from over 44,000 Airbnb listings in greater Los Angeles. The second data set includes over 1.5 million **written reviews** corresponding to the listings in the first data set.  In the "Data Preparation" section below we will merge these two data sets and filter them down to the features of interest.
 
 **How To Get The Data:** Apart from the cleaned and processed data (_processed_data.csv_), the data sets were too large to push to GitHub. Find the relevant download links below:
 
@@ -25,13 +25,13 @@ For this price analysis we pulled two data sets from [Inside Airbnb](http://insi
 
 ## Data Preparation
 
-**Listings Data Set:** To make our analysis as granular as possible, we decided to focus on listings with a specific number of bedrooms. As you can see from the graph below, 1-bedroom listings made up the majority of the data. As a result, we dropped all listings with more than 1 bedroom. To make our **target variable, price**, easier to work with we converted the price to feature to a price range based on the inter quartile range of price in this data set. As a result, our target variable was broken down into 4 classes of prcie points.
+**Listings Data Set:** To make our analysis as granular as possible, we focused on listings with a specific number of bedrooms. As you can see from the graph below, 1-bedroom listings made up the majority of the data. As a result, we dropped all listings with more than 1 bedroom. To make our **target variable, price**, easier to work with we converted the price to feature to a price range based on the interquartile price range in this data set. As a result, our target variable was broken down into four classes of price points.
 
 <p align="left">
   <img width="550" height="400" src="images/bedrooms.png">
 </p>
 
-**Reviews Data:** Our first task with the written reviews was to group reviews by their respective listings reducing the data from 1.5 million reviews to 33,000. After cleaning our features of interest and joining the data sets we pre-process our text data to prepare it for modeling.
+**Reviews Data Set:** Our first task with the written reviews was to group reviews by their respective listings reducing the data from 1.5 million reviews to 33,000. After cleaning our features of interest and joining the data sets we pre-process our text data to prepare it for modeling.
 
 **Text Processing:**
 1. Dropping symbols, numbers and non-English characters
@@ -48,7 +48,7 @@ In this case, there’s no distinction between the two as both a false positive 
 ## MODELING
 
 ## Modeling Overview
-We used three different combinations of features for our modeling. Within each combination of features we then ran multiple different types of classfication models. Using GridSearchCV we itterated over each model to get the best possible combination of hyperparamters in order build the most accurate predictive model possible.
+We used three different combinations of features for our modeling. Within each feature combination, we ran multiple types of classification models. Using GridSearchCV, we itterated over each model to get the best possible combination of hyperparameters in order to build the most accurate predictive model possible.
 
 **1. Model Features: Reviews**
 
@@ -102,7 +102,7 @@ Let's extract the top 10 feature importances from our best-performing Random For
 
 ## Evaluation
 - Typically, in a classification problem, a regression estimator such as Logistic Regression is less suited as it assumes a linear relationship. Its classifier counterparts such as Decision Trees and Random Forests on the other hand, are well suited for classification as they focus on feature selection - weighing important features more heavily. It is interesting then that our Logistic Regression had the highest accuracy score.
-- That said, as we increased the number of features in our model to improve on our cross-validation test scores, our Logistic Regression training scores actually dropped from 99% down to 83% whereas our second-best model, Random Forest's, training score remained at 100%. This suggests that as we pull in more features and data, our Random Forest Classifier may outperform the Logistic Regression.
+- That said, as we increased the number of features in our model to improve on our cross-validation test scores, our Logistic Regression training scores actually dropped from 99% down to 83% whereas our second-best model, Random Forest's, training score remained at 100%. This suggests that our Random Forest Classifier may outperform the Logistic Regression as we pull in more features and data.
 - Our best model has a low accuracy score of 55%. This means that our model accurately predicts the actual price of a listing 55% of the time based on the chosen features.
 - Though our test scores were low, an important thing to note is that our training scores were as high as 100%. This means we could potentially get to a decent predictor by continuing to tune our model to increase our accruacy score.
 
@@ -113,7 +113,7 @@ Let's extract the top 10 feature importances from our best-performing Random For
 
 **2. Potential for a good predictor** - That said, as noted above, there is potential for a good model to be developed. The biggest barrier that we faced was extremely long model tuning times. Given more time we are confident we can improve our model enough to make it a good price predictor.
 
-**3. Parallel Analysis** - Seeing at there are over 70 distinct features in Airbnb Listings data, we recommend funding a parralel analysis that focuses on these features rather than the written reviews for each listing.
+**3. Parallel Analysis** - Seeing that there are over 70 distinct features in Airbnb Listings data, we recommend funding a parallel analysis that focuses on these features rather than the written reviews for each listing.
 
 
 
