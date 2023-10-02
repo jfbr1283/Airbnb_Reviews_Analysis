@@ -31,7 +31,7 @@ For this price analysis, we pulled two data sets from [Inside Airbnb](http://ins
   <img width="550" height="400" src="images/bedrooms.png">
 </p>
 
-**Reviews Data Set:** Our first task with the written reviews was to group reviews by their respective listings reducing the data from 1.5 million reviews to 33,000. After cleaning our features of interest and [joining](https://github.com/danielburdeno/Kindle-eBook-Recommendations) the data sets we pre-process our text data to prepare it for modeling.
+**Reviews Data Set:** Our first task with the written reviews was to group reviews by their respective listings reducing the data from 1.5 million reviews to 33,000. After cleaning our features of interest and [joining](https://github.com/danielburdeno/Kindle-eBook-Recommendations](https://github.com/danielburdeno/Kindle-eBook-Recommendations/blob/main/DataPrepFinal.ipynb)) the data sets we pre-process our text data to prepare it for modeling.
 
 **Text Processing:**
 1. Dropping symbols, numbers and non-English characters
