@@ -115,15 +115,19 @@ Let's extract the top 10 feature importances from our best-performing Random For
 - Though our test scores were low, an important thing to note is that our training scores were as high as 100%. This means we could potentially get to a decent predictor by continuing to tune our model to increase our accuracy score.
 
 ## Conclusion
-**Recommendations & Next Steps:**
+**Recommendations:**
 
 **1. Unreliable Model** - At this point in time, this predictive model is not reliable enough to solve The Manhattan Beach Group's business problem of optimizing per night price point setting. Implementing a price prediction model with an accuracy score just over 50% is not a feasible business strategy.
 
-**2. Potential for a good predictor** - Though our current model falls short, as noted in our evaluation, there is potential for a good model to be developed. The biggest barrier that we faced was extremely long model tuning times. Given more time we are confident we can improve our model enough to make it a good price predictor. Specifically, we believe that working with a much larger data set could help our model generalize better. This could be easily achieved as Airbnb data is widely accessible.
+**2. Use Model Fore Specific Classes** - Though our overall Accuracy score for our best model is 55%, as mentioned above, if we look deeper, our Accuracy for both the first and fourth class of price ranges is near 70%. We recommend price setting based on our models' predictions only if it predicts the first or fourth class of price ranges - and even then, take the predictions with a grain of salt as again, the model is only 70% accurate in those cases.
 
-**3. Parallel Analysis** - Seeing that there are over 70 distinct features in Airbnb Listings data, we recommend funding a parallel analysis that focuses on these features rather than the written reviews for each listing.
+**Next Steps:**
 
-**4. Advanced Data Processing** - Given more time we would implement more advanced data processing techniques. Specifically, we would utilize pre-trained text processing models such BERT, a deep learning model developed specifically for text classification.
+**3. Potential for a good predictor** - Though our current model falls short, as noted in our evaluation, there is potential for a good model to be developed. The biggest barrier that we faced was extremely long model tuning times. Given more time we are confident we can improve our model enough to make it a good price predictor. Specifically, we believe that working with a much larger data set could help our model generalize better. This could be easily achieved as Airbnb data is widely accessible.
+
+**4. Parallel Analysis** - Seeing that there are over 70 distinct features in Airbnb Listings data, we recommend funding a parallel analysis that focuses on these features rather than the written reviews for each listing.
+
+**5. Advanced Data Processing** - Given more time we would implement more advanced data processing techniques. Specifically, we would utilize pre-trained text processing models such BERT, a deep learning model developed specifically for text classification.
 
 ## Repository Structure
 ```
