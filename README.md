@@ -126,13 +126,15 @@ Let's extract the top 10 feature importances from our best-performing Random For
 **4. Advanced Data Processing** - Given more time we would implement more advanced data processing techniques. Specifically, we would utilize pre-trained text processing models such BERT, a deep learning model developed specifically for text classification.
 
 ## Repository Structure
+```
 ├── data
 ├── images
 ├── working_notebooks
 ├── .gitignore
 ├── README.md
-├── notebook.ipynb
+├── airbnb_nlp_reviews.ipynb
+├── data_preparation.ipynb
 └── presentation.pdf
-
+```
 
 
