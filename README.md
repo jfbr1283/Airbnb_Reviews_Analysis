@@ -25,7 +25,7 @@ For this price analysis, we pulled two data sets from [Inside Airbnb](http://ins
 
 ## Data Preparation
 
-**Listings Data Set:** To make our analysis as granular as possible, we focused on listings with a specific number of bedrooms. As you can see from the graph below, 1-bedroom listings made up the majority of the data. As a result, we dropped all listings with more than 1 bedroom. To make our **target variable, price**, easier to work with we converted the price to feature to a price range based on the interquartile price range in this data set. As a result, our target variable was broken down into four classes of price points.
+**Listings Data Set:** To make our analysis as granular as possible, we focused on listings with a specific number of bedrooms. As you can see from the graph below, 1-bedroom listings made up the majority of the data. As a result, we dropped all listings with more than 1 bedroom. To make our **target variable, price**, easier to work with we converted the price feature to a price range based on the interquartile price range in this data set. As a result, our target variable was broken down into four classes of price points.
 
 <p align="left">
   <img width="550" height="400" src="images/bedrooms.png">
