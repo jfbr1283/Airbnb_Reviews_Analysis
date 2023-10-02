@@ -78,20 +78,25 @@ Models Used:
 
 1. Logisitc Regression #3 - Tuned
 - **Train Accuracy Score: 83%**
-- **Validation Test Accuracy Score: 54%**
+- **Test Accuracy Score: 55%**
 
 <p align="left">
   <img width="400" height="300" src="images/log_confusion.png">
 </p>
 
+**Though our overall Accuracy score for our best model is 55%, if we look deeper, based on the above confusion matrix, our Accuracy for both the first and fourth class of price range is near 70%.**
+
+
 2. Random Forest Classifier #3 - Tuned
 - **Train Accuracy Score: 100%**
-- **Validation Test Accuracy Score: 52%**
+- **Test Accuracy Score: 53%**
 
 <p align="left">
   <img width="400" height="300" src="images/rf_confusion.png">
 </p>
-  
+
+**Though our overall Accuracy score for our second best model is 53%, if we look deeper, based on the above confusion matrix, our Accuracy for both the first and fourth class of price range is also near 70%.**
+
 
 ## Feature Importances
 Let's extract the top 10 feature importances from our best-performing Random Forest Classifier. Specifically, we are looking at the feature importance of our reviews - text data - therefore our features will be specific words. In our top 10, we find words like _nice_, _beautiful_, _great_, and _clean_ which all have positive connotations. This indicates that our model relies more heavily on these 'positive' words when making predictions about price.
@@ -105,18 +110,21 @@ Let's extract the top 10 feature importances from our best-performing Random For
   
 - That said, as we increased the number of features in our model to improve on our cross-validation test scores, our Logistic Regression training scores actually dropped from 99% down to 83% whereas our second-best model, Random Forest's, training score remained at 100%. This suggests that our Random Forest Classifier may outperform the Logistic Regression as we pull in more features and data.
   
-- Our best model has a low accuracy score of 55%. This means that our model accurately predicts the actual price of a listing 55% of the time based on the chosen features.
+- Our best model has a low accuracy score of 55%. This means that our model accurately predicts the actual price of a listing 55% of the time based on the chosen features. Though as mentioned in the modeling section above, when looking at specific classes (price ranges), our model predicts the first and fourth classes with 70% accuracy. In a business context, our model accurately predicts the price range for a given listing 70% of the time if that listing is predicted to be less than $109 or more than $199.
   
-- Though our test scores were low, an important thing to note is that our training scores were as high as 100%. This means we could potentially get to a decent predictor by continuing to tune our model to increase our accruacy score.
+- Though our test scores were low, an important thing to note is that our training scores were as high as 100%. This means we could potentially get to a decent predictor by continuing to tune our model to increase our accuracy score.
 
 ## Conclusion
 **Recommendations & Next Steps:**
 
-**1. Unreliable Model** - At this point in time, this predictive model is not reliable enough to solve The Manhattan Beach Group's business problem of optimizing per night price point setting.
+**1. Unreliable Model** - At this point in time, this predictive model is not reliable enough to solve The Manhattan Beach Group's business problem of optimizing per night price point setting. Implementing a price prediction model with an accuracy score just over 50% is not a feasible business strategy.
 
-**2. Potential for a good predictor** - That said, as noted above, there is potential for a good model to be developed. The biggest barrier that we faced was extremely long model tuning times. Given more time we are confident we can improve our model enough to make it a good price predictor.
+**2. Potential for a good predictor** - Though our current model falls short, as noted in our evaluation, there is potential for a good model to be developed. The biggest barrier that we faced was extremely long model tuning times. Given more time we are confident we can improve our model enough to make it a good price predictor. Specifically, we believe that working with a much larger data set could help our model generalize better. This could be easily achieved as Airbnb data is widely accessible.
 
 **3. Parallel Analysis** - Seeing that there are over 70 distinct features in Airbnb Listings data, we recommend funding a parallel analysis that focuses on these features rather than the written reviews for each listing.
+
+**4. Advanced Data Processing** - Given more time we would implement more advanced data processing techniques. Specifically, we would utilize pre-trained text processing models such BERT, a deep learning model developed specifically for text classification.
+
 
 
 
