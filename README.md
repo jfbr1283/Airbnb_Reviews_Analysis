@@ -43,7 +43,7 @@ For this price analysis, we pulled two data sets from [Inside Airbnb](http://ins
 ## Evaluation Metric
 It’s often the case, in a business problem, that we focus on either minimizing false negatives or false positives. In other words, we focus on precision or recall as our evaluation metric.
 
-In this case, there’s no distinction between the two as both a false positive and a false negative reflect an inaccurate per-night price point prediction. Because of this, we chose accuracy as our evaluation metric. Accuracy in this case is how well our model predicts the actual per-night price point range of one bedroom listing.
+In this case, there’s no distinction between the two as both a false positive and a false negative reflect an inaccurate per-night price point prediction. Because of this, we chose accuracy as our evaluation metric. Accuracy in this case is how well our model predicts the actual per-night price point range of a one bedroom listing.
 
 ## MODELING
 
@@ -59,8 +59,11 @@ Models Used:
 - Random Forest Classifier
 - K-Nearest Neighbors
 - Naive Bayes
+- Simple Neural Network
 
 **2. Model Features: Ratings, Reviews & Neighborhoods**
+
+In this second group of models, we added in the features 'overall rating' and 'neighborhoods' to our analysis.
 
 Models Used:
 
@@ -68,6 +71,8 @@ Models Used:
 - Random Forest Classifier
 
 **3. Model Features: All Ratings, Reviews, Neighborhoods, Property Type & Bathrooms**
+
+In this third and final group of models, we added in all rating features, 'property type', and number of 'bathrooms' to our analysis.
 
 Models Used:
 
