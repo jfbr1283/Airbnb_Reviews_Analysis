@@ -145,5 +145,9 @@ Let's extract the top 10 feature importances from our best-performing Random For
 ├── data_preparation.ipynb
 └── presentation.pdf
 ```
+### Sources:
+
+1. [Kindle Recommendations](https://github.com/danielburdeno/Kindle-eBook-Recommendations)
+2. [Airbnb & Zillow Analysis](https://github.com/Srihari231092/airbnb_zillow_analytics)
 
 
