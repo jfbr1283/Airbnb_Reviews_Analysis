@@ -149,5 +149,6 @@ Let's extract the top 10 feature importances from our best-performing Random For
 
 1. [Kindle Recommendations](https://github.com/danielburdeno/Kindle-eBook-Recommendations)
 2. [Airbnb & Zillow Analysis](https://github.com/Srihari231092/airbnb_zillow_analytics)
+3. [A past group project: Twitter Sentiment Analysis](https://github.com/aungsias/TwitterNLP/tree/main)
 
 
