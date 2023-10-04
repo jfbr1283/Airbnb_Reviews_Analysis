@@ -145,9 +145,9 @@ Let's extract the top 10 feature importances from our best-performing Random For
 ├── working_notebooks
 ├── .gitignore
 ├── README.md
-├── airbnb_nlp_reviews.ipynb
 ├── data_preparation.ipynb
-└── presentation.pdf
+├── modeling_evaluation.ipynb
+└── presentation_airbnb_price.pdf
 ```
 ### Sources:
 
