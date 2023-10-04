@@ -97,7 +97,7 @@ Models Used:
 
 
 2. Random Forest Classifier #3 - Tuned
-- **Train Accuracy Score: 100%**
+- **Train Accuracy Score: 84%**
 - **Test Accuracy Score: 53%**
 
 <p align="left">
@@ -115,13 +115,11 @@ Let's extract the top 10 feature importances from our best-performing Random For
 </p>
 
 ## Evaluation
-- Typically, in a classification problem, a regression estimator such as Logistic Regression is less suited as it assumes a linear relationship. Its classifier counterparts such as Decision Trees and Random Forests on the other hand, are well suited for classification as they focus on feature selection - weighing important features more heavily. It is interesting then that our Logistic Regression had the highest accuracy score.
-  
-- That said, as we increased the number of features in our model to improve on our cross-validation test scores, our Logistic Regression training scores actually dropped from 99% down to 83% whereas our second-best model, Random Forest's, training score remained at 100%. This suggests that our Random Forest Classifier may outperform the Logistic Regression as we pull in more features and data.
-  
-- Our best model has a low accuracy score of 55%. This means that our model accurately predicts the actual price of a listing 55% of the time based on the chosen features. Though as mentioned in the modeling section above, when looking at specific classes (price ranges), our model predicts the first and fourth classes with 70% accuracy. In a business context, our model accurately predicts the price range for a given listing 70% of the time if that listing is predicted to be less than $109 or more than $199.
-  
-- Though our test scores were low, an important thing to note is that our training scores were as high as 100%. This means we could potentially get to a decent predictor by continuing to tune our model to increase our accuracy score.
+- Typically, in a classification problem, a regression estimator such as Logistic Regression is less suited for the task as it assumes a linear relationship. Whereas, its classifier counterparts such as Decision Trees and Random Forests are well suited for classification as they focus on feature selection - weighing important features more heavily. It is interesting then that our Logistic Regression had the highest accuracy score.
+
+- As we increased the number of features and tuned our model to improve our cross-validation test scores, the training scores for both our models dropped significantly from 99% to 83% and 84%, respectively. This suggests that as we pull in more features more data and continue to tune specifically our Random Forest Classifier, we could continue to reduce overfitting and to potentially arrive at a decent price-predicting model.
+
+- Our best model has a low accuracy score of 55%. This means that our model accurately predicts the actual price of a listing 55% of the time based on the chosen features.
 
 ## Conclusion
 **Recommendations:**
